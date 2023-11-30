@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square Circle</title>
+</head>
+<body onload="draw()">
+    <canvas id="sketch" width="300" height="300"></canvas>
+    <script>
+        function draw() 
+        {
+            var sketch = document.getElementById('sketch');
+            var context = sketch.getContext("2d");
+
+            context.fillStyle = 'red';
+            context.fillRect(10, 10, 100, 100);
+
+            context.beginPath();
+            context.fillStyle = 'blue';
+            context.arc(200, 60, 50, 0, 2 * Math.PI);
+            context.fill();
+        }
+    </script>
+</body>
+</html>
