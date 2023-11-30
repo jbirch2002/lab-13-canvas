@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Circle</title>
+</head>
+<body onload="draw()">
+    <canvas id="sketch" width="300" height="300"></canvas>
+    <script>
+        function draw()
+        {
+            var sketch = document.getElementById('sketch');
+            var context = sketch.getContext("2d");
+
+            let radius = parseInt(prompt("Enter a radius"));
+            let color_input = prompt("Enter a color (red, green, blue)");
+
+            let color;
+            
+            if (color_input === "red")
+            {
+                color = "#ff0000";
+            }
+            else if (color_input.ignoreCase() === "green") 
+            {
+                color = "#00ff00";
+            } 
+            else if (color_input === "blue")
+            {
+                color = "#0000ff";
+            } 
+            else 
+            {
+                color = "#000000";
+            }
+
+            context.beginPath();
+            context.arc(150, 150, radius, 0, 2 * Math.PI);
+            context.fillStyle = color;
+            context.fill();
+        }
+    </script>
+</body>
+</html>
