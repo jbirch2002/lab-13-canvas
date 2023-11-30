@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4by7</title>
+</head>
+<body onload="draw()">
+    <canvas id="sketch" width="500" height="500"></canvas>
+    <script>
+        function draw() {
+            var sketch = document.getElementById('sketch');
+            var context = sketch.getContext("2d");
+
+            let rows = 7;
+            let columns = 4;
+            let circle_radius = 20;
+            let spacing = 50;
+
+            context.fillStyle = 'lightgreen';
+
+            for (var i = 0; i < rows; i++) 
+            {
+                for (var j = 0; j < columns; j++)
+                {
+                    var x = spacing + j * spacing;
+                    var y = spacing + i * spacing;
+
+                    context.beginPath();
+                    context.arc(x, y, circle_radius, 0, 2 * Math.PI);
+                    context.fill();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
